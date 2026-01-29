@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot + WSO2 Test</title>
+</head>
+<body>
+    <h1>Welcome, <span th:text="${userName}"></span></h1>
+    <p>Org: <span th:text="${org_name}"></span></p>
+    <p>Roles: <span th:text="${roles}"></span></p>
+    <p>Phone Number: <span th:text="${phone_number}"></span></p>
+    <a href="/admin">Admin Page</a> | <a href="/user">User Page</a> | <a href="/logout">Logout</a>
+
+<!--<h1>Welcome to Spring Boot + WSO2 Test</h1>-->
+
+<!--<div th:if="${userName}">-->
+<!--    <p>Hello, <strong th:text="${userName}"></strong>!</p>-->
+<!--    <p>Email: <span th:text="${email}"></span></p>-->
+<!--    <a href="/secured">Go to secured page</a>-->
+<!--    <br>-->
+<!--    <a href="/logout">Logout</a>-->
+<!--</div>-->
+
+<!--<div th:unless="${userName}">-->
+<!--    <p>You are not logged in.</p>-->
+<!--    <a th:href="@{/oauth2/authorization/wso2}">Login with WSO2</a>-->
+<!--</div>-->
+</body>
+</html>
