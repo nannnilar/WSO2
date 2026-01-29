@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Secured Page</title>
+</head>
+<body>
+<h1>Secured Page</h1>
+
+<div th:if="${user}">
+    <p>Welcome, <strong th:text="${user.fullName}"></strong>!</p>
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Claims:</p>
+    <ul>
+        <li th:each="entry : ${user.claims.entrySet()}"
+            th:text="${entry.key} + ': ' + ${entry.value}"></li>
+    </ul>
+    <a href="/">Go Home</a>
+    <br>
+    <a href="/logout">Logout</a>
+</div>
+</body>
+</html>

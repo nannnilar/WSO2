@@ -1,0 +1,39 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          wso2:
+            client-id: fQwzC_yV_is19vn1DP9rWk4fAv4a
+            client-secret: bmMQw6Ayr2ZUyVY3ebT8OPhMPzgJjUm9J_RHOfw_GCka
+            client-name: sample-app
+            provider: wso2
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+              - openid
+              - profile
+              - email
+              - roles
+              - phone
+        provider:
+          wso2:
+            authorization-uri: https://localhost:9444/oauth2/authorize
+            token-uri: https://localhost:9444/oauth2/token
+            user-info-uri: https://localhost:9444/oauth2/userinfo
+            jwk-set-uri: https://localhost:9444/oauth2/jwks
+            user-name-attribute: sub
+
+server:
+  port: 9090
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+

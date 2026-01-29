@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d9534f;
+        }
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .details {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Oops! Something went wrong.</h1>
+    <p>We couldn't process your request.</p>
+    <p><a href="/">Go back to Home</a></p>
+
+    <div class="details">
+        <p>Status: <span th:text="${status}">Unknown</span></p>
+        <p>Error: <span th:text="${error}">Unknown</span></p>
+        <p>Message: <span th:text="${message}">No details</span></p>
+        <p>Path: <span th:text="${path}">Unknown</span></p>
+    </div>
+</div>
+</body>
+</html>
